@@ -1,0 +1,82 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+
+.hero {
+  .hero-head {
+    .navbar{
+      .container{
+        .navbar-brand{
+          .navbar-burger{
+            color: $site-font-highlight;
+          }
+        }
+      }
+    }
+  }
+
+  .hero-body {
+    .container {
+      .columns {
+        .description-column {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          .hero-sub-text {
+            color: $site-font-dull;
+            font-weight: 500;
+            font-size: 1.5rem;
+
+            @include media($from: 'tablet'){
+              font-size: 2rem;
+            }
+            @include media($from: 'widescreen'){
+              font-size: 2.2rem;
+            }
+          }
+
+          .hero-title {
+            font-size: 3rem;
+            color: $site-font-highlight;
+            font-weight: 900;
+            margin-bottom: 2.5rem;
+
+            @include media($from: 'tablet'){
+              font-size: 4rem;
+            }
+            @include media($from: 'widescreen'){
+              font-size: 4.5rem;
+            }
+          }
+
+          .hero-subtitle {
+            color: $site-font-white;
+            font-size: 1.5rem;
+
+            @include media($from: 'widescreen'){
+              font-size: 2.2rem;
+            }
+          }
+
+          .hero-cta{
+            width: fit-content;
+            border: none;
+            font-size: 1rem;
+            color: $site-base-color;
+            font-weight: 600;
+            background-color: $site-cta;
+
+            @include media($from: 'mobile'){
+              font-size: 1.5rem;
+            }
+            @include media($from: 'widescreen'){
+              font-size: 1.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@import "commons.scss";

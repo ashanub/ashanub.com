@@ -1,0 +1,11 @@
+/*
+Common Classes
+ */
+
+body, button, input, optgroup, select, textarea{
+  font-family: $site-main-font;
+}
+
+.is-background-site-base {
+  background-color: $site-base-color;
+}

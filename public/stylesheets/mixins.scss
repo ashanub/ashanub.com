@@ -1,0 +1,70 @@
+/**
+Media queries mixin courtesy of Nidhish Shah. Taken from https://dev.to/nidhishs/5-scss-mixins-to-check-out-2bkn#media-queries
+Customized
+*/
+//Custom breakpoints based on Bulma's responsive breakpoints
+// Custom Breakpoints (from)
+$breakpoints-from: (
+        mobile: 0,
+        tablet: 576px,
+        tablet-big: 769px,
+        desktop: 1024px,
+        widescreen: 1216px,
+        fullhd: 1408px,
+);
+// Custom Breakpoints (to)
+$breakpoints-until: (
+        mobile: 575px,
+        tablet: 768px,
+        tablet-big: 1023px,
+        desktop: 1215px,
+        widescreen: 1407,
+);
+// Media-Query Mixin
+@mixin media(
+  $from: false,
+  $until: false,
+  $and: false,
+  $media-type: all,
+) {
+  $min-width: 0;
+  $max-width: 0;
+  $query: "";
+
+  //FROM: this breakpoint (inclusive)
+  @if $from {
+    @if type-of($from) == number {
+      $min-width: $from;
+    } @else {
+      $min-width: map-get($breakpoints-from, $from);
+    }
+  }
+
+  //UNTIL: this breakpoint (exclusive)
+  @if $until {
+    @if type-of($until) == number {
+      $max-width: $until - 1px;
+    } @else {
+      $max-width: map-get($breakpoints-until, $until) - 1px;
+    }
+  }
+
+  @if $min-width != 0 {
+    $query: "#{$query} and (min-width: #{$min-width})";
+  }
+  @if $max-width != 0 {
+    $query: "#{$query} and (max-width: #{$max-width})";
+  }
+  @if $and {
+    $query: "#{$query} and (#{$and})";
+  }
+
+  @if ($media-type == "all" and $query != "") {
+    $media-type: "";
+    $query: str-slice(unquote($query), 6);
+  }
+
+  @media #{$media-type + $query} {
+    @content;
+  }
+}

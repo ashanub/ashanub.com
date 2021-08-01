@@ -1,8 +1,61 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+/*Site Variables */
+/**
+Media queries mixin courtesy of Nidhish Shah. Taken from https://dev.to/nidhishs/5-scss-mixins-to-check-out-2bkn#media-queries
+Customized
+*/
+.hero .hero-head .navbar .container .navbar-brand .navbar-burger {
+  color: #E47F61; }
 
-a {
-  color: #00B7FF;
-}
+.hero .hero-body .container .columns .description-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .hero .hero-body .container .columns .description-column .hero-sub-text {
+    color: #B0A8B9;
+    font-weight: 500;
+    font-size: 1.5rem; }
+    @media (min-width: 576px) {
+      .hero .hero-body .container .columns .description-column .hero-sub-text {
+        font-size: 2rem; } }
+    @media (min-width: 1216px) {
+      .hero .hero-body .container .columns .description-column .hero-sub-text {
+        font-size: 2.2rem; } }
+  .hero .hero-body .container .columns .description-column .hero-title {
+    font-size: 3rem;
+    color: #E47F61;
+    font-weight: 900;
+    margin-bottom: 2.5rem; }
+    @media (min-width: 576px) {
+      .hero .hero-body .container .columns .description-column .hero-title {
+        font-size: 4rem; } }
+    @media (min-width: 1216px) {
+      .hero .hero-body .container .columns .description-column .hero-title {
+        font-size: 4.5rem; } }
+  .hero .hero-body .container .columns .description-column .hero-subtitle {
+    color: #FCEAFF;
+    font-size: 1.5rem; }
+    @media (min-width: 1216px) {
+      .hero .hero-body .container .columns .description-column .hero-subtitle {
+        font-size: 2.2rem; } }
+  .hero .hero-body .container .columns .description-column .hero-cta {
+    width: fit-content;
+    border: none;
+    font-size: 1rem;
+    color: #312244;
+    font-weight: 600;
+    background-color: #FDB85D; }
+    @media all {
+      .hero .hero-body .container .columns .description-column .hero-cta {
+        font-size: 1.5rem; } }
+    @media (min-width: 1216px) {
+      .hero .hero-body .container .columns .description-column .hero-cta {
+        font-size: 1.8rem; } }
+
+/*
+Common Classes
+ */
+body, button, input, optgroup, select, textarea {
+  font-family: "Fira Sans", sans-serif; }
+
+.is-background-site-base {
+  background-color: #312244; }
