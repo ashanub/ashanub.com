@@ -2,10 +2,64 @@
 Common Classes
  */
 
-body, button, input, optgroup, select, textarea{
+body, button, input, optgroup, select, textarea {
   font-family: $site-main-font;
+}
+
+.add-navbar-space {
+  margin-top: 52px;
 }
 
 .is-background-site-base {
   background-color: $site-base-color;
+}
+
+.is-font-color-highlight {
+  color: $site-font-highlight;
+}
+
+.is-font-color-white {
+  color: $site-font-white;
+}
+
+.is-font-color-purple {
+  color: $site-purple;
+}
+
+.is-font-section-title {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.is-font-body {
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+.site-border-radius {
+  border-radius: 4px;
+}
+
+.site-element-shadow-very-small{
+  box-shadow: 5px 5px $site-purple;
+  background-color: $site-font-white;
+}
+
+.site-element-shadow-small {
+  box-shadow: 10px 10px $site-purple;
+  transition: box-shadow .3s ease-in-out, background-color .3s ease-in-out;
+
+  &:hover, &:focus {
+    box-shadow: 5px 5px $site-purple;
+    background-color: $site-font-white;
+  }
+}
+
+.site-element-shadow-large {
+  box-shadow: 30px 30px $site-purple;
+  transition: box-shadow .3s ease-in-out, background-color .3s ease-in-out;
+
+  &:hover, &:focus {
+    box-shadow: 5px 5px $site-purple;
+  }
 }

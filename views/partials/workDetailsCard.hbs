@@ -1,0 +1,28 @@
+<div class="content-box site-element-shadow-{{shadow}} work-details-card {{visibility}}" id="{{id}}">
+    <div class="card">
+        <div class="card-image">
+            <figure class="image is-16by9">
+                <img src="/images/{{image}}.jpg" alt="{{alt}}">
+            </figure>
+        </div>
+        <div class="card-content">
+            <div class="content main-content">
+                <p class="is-font-body">{{body}}</p>
+                <div class="tags-button-wrap">
+                    <div class="tech-stack">
+                        {{#each (makeArray techStack)}}
+                            <span class="tag is-medium">{{this}}</span>
+                        {{/each}}
+                    </div>
+                    <div class="view-button-wrap">
+                        {{#if link}}
+                            <a href="{{link}}" target="_blank"
+                               class="button is-light is-primary hero-cta site-element-shadow-small"
+                               id="talk-to-me">View</a>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

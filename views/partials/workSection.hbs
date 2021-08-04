@@ -1,0 +1,158 @@
+<section class="section is-medium add-navbar-space" id="work">
+    <div class="container">
+        <div class="columns tab-columns site-border-radius">
+            <div class="column is-one-third tabs-column">
+                <h3 class="is-font-section-title is-font-color-highlight">My Work</h3>
+                <div class="tabs is-hidden-touch">
+                    <ul>
+                        <li class="is-active site-border-radius" data-target="yonder">
+                            <div class="column description-column">
+                                <div class="columns">
+                                    <div class="column is-3">
+                                        <figure class="image is-square">
+                                            <img src="/images/yonder-thumb.jpg">
+                                        </figure>
+                                    </div>
+                                    <div class="column">
+                                        <h3 class="tab-title">Yonder</h3>
+                                        <p class="tab-subtitle">Website</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="site-border-radius" data-target="chint">
+                            <div class="column description-column">
+                                <div class="columns">
+                                    <div class="column is-3">
+                                        <figure class="image is-square">
+                                            <img src="/images/chint-thumb.jpg">
+                                        </figure>
+                                    </div>
+                                    <div class="column">
+                                        <h3 class="tab-title">Chint Energy</h3>
+                                        <p class="tab-subtitle">Website</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="site-border-radius" data-target="learning-pedals">
+                            <div class="column description-column">
+                                <div class="columns">
+                                    <div class="column is-3">
+                                        <figure class="image is-square">
+                                            <img src="/images/learning-pedals-thumb.jpg">
+                                        </figure>
+                                    </div>
+                                    <div class="column">
+                                        <h3 class="tab-title">Learning Pedals</h3>
+                                        <p class="tab-subtitle">Website</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="site-border-radius" data-target="utb">
+                            <div class="column description-column">
+                                <div class="columns">
+                                    <div class="column is-3">
+                                        <figure class="image is-square">
+                                            <img src="/images/utb-thumb.jpg">
+                                        </figure>
+                                    </div>
+                                    <div class="column">
+                                        <h3 class="tab-title">UTB Travels</h3>
+                                        <p class="tab-subtitle">Website</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="site-border-radius" data-target="polymer">
+                            <div class="column description-column">
+                                <div class="columns">
+                                    <div class="column is-3">
+                                        <figure class="image is-square">
+                                            <img src="/images/polymer-thumb.jpg">
+                                        </figure>
+                                    </div>
+                                    <div class="column">
+                                        <h3 class="tab-title">Polymer Impex</h3>
+                                        <p class="tab-subtitle">Task Scheduling Application</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="site-border-radius more-work">
+                            <div class="column description-column">
+                                <div class="columns">
+                                    <div class="column">
+                                        <a href="/work" id="more-work">
+                                            <h3 class="tab-title">More of my work</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!--                Mobile only -->
+                <div class="is-hidden-desktop mobile-work-cards columns is-multiline">
+                    <div class="column">
+                        {{> workDetailsCard visibility="" shadow="very-small" id="yonder" image="yonder" alt="Yonder Screenshot" body="A travel & tourism website made for Yonder UK that showcases
+                tour packages & destinations the company provides" techStack="Wordpress;HTML;CSS;JS / JQuery;Bootstrap" link="https://www.yonder.co.uk/"}}
+                    </div>
+
+                    <div class="column">
+                        {{> workDetailsCard visibility="" shadow="very-small" id="chint" image="chint" alt="Chint Screenshot" body="The corporate website for Chint Energy Sri Lanka. Originally
+                built as a static site which was later converted in to dynamic by implementing Wordpress as a CMS"
+                                techStack="Wordpress;HTML;CSS;JS / JQuery;Bootstrap"
+                                link="http://chintenergy.lk/"}}
+                    </div>
+
+                    <div class="column">
+                        {{> workDetailsCard visibility="" shadow="very-small" id="learning-pedals" image="learning-pedals" alt="Learning Pedals Screenshot" body="The website of Learning Pedals, Narre Warren, Australia. The
+                website is Wordpress based and the appointment booking form was developed from the
+                ground up to collect submitted data and display them in a Google Sheets document" techStack="Wordpress;HTML;CSS;JS / JQuery;Bootstrap"
+                                link="https://www.learningpedals.com.au/"}}
+                    </div>
+
+                    <div class="column">
+                        {{> workDetailsCard visibility="" shadow="very-small" id="utb" image="utb" alt="UTB screenshot" body="A travel & tourism website made for UTB travel Sri Lanka. Site
+                was made using the Vue static site generator Gridsome with Wordpress as a headless CMS" techStack="Gridsome;GraphQL;Vue;Wordpress;Bulma;SCSS"
+                                link="https://utb-travels.netlify.app/"}}
+                    </div>
+
+                    <div class="column">
+                        {{> workDetailsCard visibility="" shadow="very-small" id="polymer" image="polymer" alt="Polymer screenshot" body="An internal, web-based task scheduling system build for Polymer
+                    Impex, Sri Lanka." techStack="AdonisJS;Vue;Bulma"}}
+                    </div>
+
+                    <div class="column" id="more-work-mobile">
+                        <a href="/work">
+                            <h3 class="tab-title">More of my work</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="column details-section tab-content-column is-hidden-touch" id="tab-content">
+                {{> workDetailsCard visibility="" shadow="large" id="yonder" image="yonder" alt="Yonder Screenshot" body="A travel & tourism website made for Yonder UK that showcases
+                tour packages & destinations the company provides" techStack="Wordpress;HTML;CSS;JS / JQuery;Bootstrap" link="https://www.yonder.co.uk/"}}
+
+                {{> workDetailsCard visibility="is-hidden" shadow="large" id="chint" image="chint" alt="Chint Screenshot" body="The corporate website for Chint Energy Sri Lanka. Originally
+                built as a static site which was later converted in to dynamic by implementing Wordpress as a CMS"
+                        techStack="Wordpress;HTML;CSS;JS / JQuery;Bootstrap"
+                        link="http://chintenergy.lk/"}}
+
+                {{> workDetailsCard visibility="is-hidden" shadow="large" id="learning-pedals" image="learning-pedals" alt="Learning Pedals Screenshot" body="The website of Learning Pedals, Narre Warren, Australia. The
+                website is Wordpress based and the appointment booking form was developed from the
+                ground up to collect submitted data and display them in a Google Sheets document" techStack="Wordpress;HTML;CSS;JS / JQuery;Bootstrap"
+                        link="https://www.learningpedals.com.au/"}}
+
+                {{> workDetailsCard visibility="is-hidden" shadow="large" id="utb" image="utb" alt="UTB screenshot" body="A travel & tourism website made for UTB travel Sri Lanka. Site
+                was made using the Vue static site generator Gridsome with Wordpress as a headless CMS" techStack="Gridsome;GraphQL;Vue;Wordpress;Bulma;SCSS"
+                        link="https://utb-travels.netlify.app/"}}
+
+                {{> workDetailsCard visibility="is-hidden" shadow="large" id="polymer" image="polymer" alt="Polymer screenshot" body="An internal, web-based task scheduling system build for Polymer
+                    Impex, Sri Lanka." techStack="AdonisJS;Vue;Bulma"}}
+            </div>
+        </div>
+    </div>
+</section>

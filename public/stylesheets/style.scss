@@ -1,80 +1,329 @@
 @import "variables.scss";
 @import "mixins.scss";
 
+html {
+  scroll-behavior: smooth;
 
-.hero {
-  .hero-head {
-    .navbar{
-      .container{
-        .navbar-brand{
-          .navbar-burger{
-            color: $site-font-highlight;
+  .hero {
+    .hero-head {
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        .container {
+          .navbar-brand {
+            .navbar-burger {
+              color: $site-font-highlight;
+            }
+          }
+
+          .navbar-menu {
+            transition: all .5s ease-in-out;
+
+            .navbar-end {
+              .navbar-item {
+                color: $site-font-white;
+
+                &:hover {
+                  background-color: $site-font-white;
+                  color: $site-black;
+                }
+              }
+
+              .is-active {
+                color: $site-font-highlight;
+              }
+            }
+          }
+
+          .is-mobile {
+            background-color: $site-purple;
+          }
+        }
+      }
+
+      .is-scrolled {
+        background-color: $site-purple;
+        transition: background-color 0.5s linear, box-shadow 0.3s ease-in-out;
+        box-shadow: 0 10px $site-black;
+      }
+    }
+
+    .hero-body {
+      margin-top: 52px;
+
+      .container {
+        .columns {
+          .description-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .hero-sub-text {
+              color: $site-font-dull;
+              font-weight: 500;
+              font-size: 1.5rem;
+
+              @include media($from: 'tablet') {
+                font-size: 2rem;
+              }
+              @include media($from: 'widescreen') {
+                font-size: 2.2rem;
+              }
+            }
+
+            .hero-title {
+              font-size: 3rem;
+              color: $site-font-highlight;
+              font-weight: 900;
+              margin-bottom: 2.5rem;
+
+              @include media($from: 'tablet') {
+                font-size: 4rem;
+              }
+              @include media($from: 'widescreen') {
+                font-size: 4.5rem;
+              }
+            }
+
+            .hero-subtitle {
+              color: $site-font-white;
+              font-size: 1.5rem;
+
+              @include media($from: 'widescreen') {
+                font-size: 2.2rem;
+              }
+            }
+
+            .hero-cta {
+              width: fit-content;
+              border: none;
+              font-size: 1rem;
+              color: $site-base-color;
+              font-weight: 600;
+              background-color: $site-cta;
+
+              @include media($from: 'mobile') {
+                font-size: 1.5rem;
+              }
+              @include media($from: 'widescreen') {
+                font-size: 1.8rem;
+              }
+
+              &:hover {
+                background-color: $site-font-white;
+              }
+            }
           }
         }
       }
     }
   }
 
-  .hero-body {
+  #about {
     .container {
       .columns {
         .description-column {
+          .skills-columns {
+            display: flex;
+            flex-wrap: wrap;
+
+            .tag {
+              background-color: $site-purple;
+              color: $site-font-white;
+              margin: 3px;
+            }
+          }
+        }
+
+        .image-column {
           display: flex;
-          flex-direction: column;
           justify-content: center;
-          .hero-sub-text {
-            color: $site-font-dull;
-            font-weight: 500;
-            font-size: 1.5rem;
+          align-items: center;
 
-            @include media($from: 'tablet'){
-              font-size: 2rem;
-            }
-            @include media($from: 'widescreen'){
-              font-size: 2.2rem;
+          img {
+            width: 50%;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+
+  #work {
+    .container {
+      .tab-columns {
+
+        .tabs-column {
+
+          .is-font-section-title {
+            margin-bottom: 1.5rem;
+          }
+
+          .tabs {
+            ul {
+              flex-direction: column;
+              align-items: flex-start;
+              border: none;
+
+              li {
+                width: 100%;
+                cursor: pointer;
+                transition: background-color 0.3s ease-in-out;
+
+                .columns {
+                  .column {
+                    .tab-title {
+                      font-size: 1.5rem;
+                      color: $site-font-white;
+                      font-weight: 500;
+                    }
+
+                    #more-work {
+                      background-color: $site-black;
+                    }
+
+                    .tab-subtitle {
+                      font-size: 1.2rem;
+                      font-weight: 200;
+                      color: $site-font-highlight;
+                    }
+                  }
+                }
+              }
+
+              .is-active {
+                background-color: $site-purple;
+              }
             }
           }
 
-          .hero-title {
-            font-size: 3rem;
-            color: $site-font-highlight;
-            font-weight: 900;
-            margin-bottom: 2.5rem;
-
-            @include media($from: 'tablet'){
-              font-size: 4rem;
+          .mobile-work-cards {
+            .work-details-card {
+              margin-bottom: 2rem;
             }
-            @include media($from: 'widescreen'){
-              font-size: 4.5rem;
-            }
-          }
 
-          .hero-subtitle {
-            color: $site-font-white;
-            font-size: 1.5rem;
+            #more-work-mobile {
+              background-color: $site-black;
 
-            @include media($from: 'widescreen'){
-              font-size: 2.2rem;
+              a {
+                font-size: 1.5rem;
+                color: $site-font-white;
+                font-weight: 500;
+              }
             }
           }
+        }
 
-          .hero-cta{
-            width: fit-content;
-            border: none;
-            font-size: 1rem;
-            color: $site-base-color;
-            font-weight: 600;
-            background-color: $site-cta;
+        .tab-content-column {
+          min-height: 500px;
 
-            @include media($from: 'mobile'){
-              font-size: 1.5rem;
+          .content-box {
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+  }
+
+  #contact {
+    .container {
+      .columns {
+        .description-column {
+
+        }
+
+        .form-column {
+          form {
+            .control{
+              input, textarea {
+                background-color: $site-font-white;
+              }
+
+              .icon{
+                color: $site-black;
+              }
             }
-            @include media($from: 'widescreen'){
-              font-size: 1.8rem;
+
+            button {
+              font-size: 1.5em;
+              font-weight: 600;
+              min-width: 200px;
+              color: $site-base-color;
+              background-color: $site-cta;
+
+              &:hover {
+                background-color: $site-font-white;
+              }
             }
           }
         }
       }
+    }
+  }
+
+  .work-details-card {
+    height: 100%;
+
+    .card {
+      height: 100%;
+
+      .card-content {
+        background-color: #ccb9e487;
+
+        .main-content {
+          //position: relative;
+          height: 100%;
+
+          .tags-button-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            //position: absolute;
+            //bottom: 0;
+
+            .tech-stack {
+              display: flex;
+              flex-wrap: wrap;
+
+              .tag {
+                background-color: $site-purple;
+                color: $site-font-white;
+                margin: 3px;
+              }
+            }
+
+            .view-button-wrap {
+              a {
+                font-size: 1.5em;
+                font-weight: 600;
+                min-width: 200px;
+                color: #312244;
+                background-color: #fdb85d;
+
+                &:hover {
+                  background-color: $site-font-white;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer{
+    background-color: $site-black;
+
+    .link{
+      color: $site-cta;
+    }
+
+    .heart{
+      color: #ec5454;
     }
   }
 }
