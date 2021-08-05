@@ -184,7 +184,6 @@ html {
     html .footer .heart {
       color: #ec5454; }
   html .social-links {
-    width: 100%;
     position: fixed;
     display: flex;
     bottom: 5%; }
@@ -264,4 +263,7 @@ body, button, input, optgroup, select, textarea {
 
 .social-horizontal {
   display: flex;
+  width: 100%; }
+
+.is-fullwidth {
   width: 100%; }

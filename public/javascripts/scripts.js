@@ -24,15 +24,27 @@ document.addEventListener('DOMContentLoaded', event => {
   document.addEventListener('scroll', event => {
     if (window.scrollY > 100) {
       siteNavBar[0].classList.add('is-scrolled')
-      makeSocialVertical()
+
     } else {
       siteNavBar[0].classList.remove('is-scrolled')
-      makeSocialHorizontal()
+
     }
 
-    if (((window.innerHeight + window.scrollY)) >=
+    // if ((window.innerHeight + window.scrollY) >=
+    //   document.body.offsetHeight - 300) {
+    //   showFooterSocial()
+    // }
+
+    if (((window.innerHeight + window.scrollY) <=
+      (document.body.offsetHeight - 300)) && (window.scrollY > 100)){
+      console.log('middle')
+      makeSocialVertical()
+    } else if ((window.innerHeight + window.scrollY) >=
       document.body.offsetHeight - 300) {
       showFooterSocial()
+    } else {
+      siteNavBar[0].classList.add('is-scrolled')
+      makeSocialHorizontal()
     }
   })
 
@@ -123,8 +135,10 @@ function resizeWorkCard () {
 function makeSocialVertical () {
   const socialIcons = document.getElementById('social-links-desktop')
   const socialContainer = socialIcons.getElementsByClassName('container')[0]
+
+  socialIcons.classList.remove('is-hidden')
   if (socialContainer !== undefined) {
-    // socialIcons.classList.remove('is-hidden')
+    socialIcons.classList.remove('is-fullwidth')
     socialContainer.classList.remove('container')
     socialContainer.classList.remove('social-horizontal')
     socialContainer.classList.add('social-vertical')
@@ -137,6 +151,7 @@ function makeSocialHorizontal () {
     'social-vertical')[0]
   if (socialContainer !== undefined) {
     socialContainer.classList.add('container')
+    socialIcons.classList.add('is-fullwidth')
     socialContainer.classList.remove('social-vertical')
     socialContainer.classList.add('social-horizontal')
   }
