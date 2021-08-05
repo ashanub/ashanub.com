@@ -243,6 +243,10 @@ html {
   }
 
   #contact {
+    @include media($until: 'ipad') {
+      margin-bottom: 5rem;
+    }
+
     .container {
       .columns {
         .description-column {
@@ -350,7 +354,7 @@ html {
     width: 100%;
     position: fixed;
     display: flex;
-    bottom: 0;
+    bottom: 5%;
 
     .icon {
       padding: 1.5rem;

@@ -131,6 +131,9 @@ html {
     min-height: 500px; }
     html #work .container .tab-columns .tab-content-column .content-box {
       border-radius: 4px; }
+  @media (max-width: 1023px) {
+    html #contact {
+      margin-bottom: 5rem; } }
   html #contact .container .columns .form-column form .control input, html #contact .container .columns .form-column form .control textarea {
     background-color: #ccb9e4; }
   html #contact .container .columns .form-column form .control .icon {
@@ -184,7 +187,7 @@ html {
     width: 100%;
     position: fixed;
     display: flex;
-    bottom: 0; }
+    bottom: 5%; }
     html .social-links .icon {
       padding: 1.5rem;
       border-radius: 4px;
@@ -235,7 +238,11 @@ body, button, input, optgroup, select, textarea {
 
 .site-element-shadow-very-small {
   box-shadow: 5px 5px #72385e;
-  background-color: #ccb9e4; }
+  background-color: #ccb9e4;
+  transition: box-shadow .3s ease-in-out, background-color .3s ease-in-out; }
+  .site-element-shadow-very-small:hover, .site-element-shadow-very-small:focus {
+    box-shadow: 1px 1px #72385e;
+    background-color: #ccb9e4; }
 
 .site-element-shadow-small {
   box-shadow: 10px 10px #72385e;
@@ -249,3 +256,12 @@ body, button, input, optgroup, select, textarea {
   transition: box-shadow .3s ease-in-out, background-color .3s ease-in-out; }
   .site-element-shadow-large:hover, .site-element-shadow-large:focus {
     box-shadow: 5px 5px #72385e; }
+
+.social-vertical {
+  display: flex;
+  flex-direction: column;
+  width: fit-content; }
+
+.social-horizontal {
+  display: flex;
+  width: 100%; }

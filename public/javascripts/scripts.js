@@ -20,12 +20,19 @@ document.addEventListener('DOMContentLoaded', event => {
     mobileNavBar[0].classList.toggle('is-active')
   })
 
-  //Changing navbar background color on scroll
+  //Changing navbar background color on scroll & arranging the social media icons
   document.addEventListener('scroll', event => {
     if (window.scrollY > 100) {
       siteNavBar[0].classList.add('is-scrolled')
+      makeSocialVertical()
     } else {
       siteNavBar[0].classList.remove('is-scrolled')
+      makeSocialHorizontal()
+    }
+
+    if (((window.innerHeight + window.scrollY)) >=
+      document.body.offsetHeight - 300) {
+      showFooterSocial()
     }
   })
 
@@ -111,4 +118,34 @@ function resizeWorkCard () {
     cardContent.style.height = contentSectionHeight + 'px'
 
   })
+}
+
+function makeSocialVertical () {
+  const socialIcons = document.getElementById('social-links-desktop')
+  const socialContainer = socialIcons.getElementsByClassName('container')[0]
+  if (socialContainer !== undefined) {
+    // socialIcons.classList.remove('is-hidden')
+    socialContainer.classList.remove('container')
+    socialContainer.classList.remove('social-horizontal')
+    socialContainer.classList.add('social-vertical')
+  }
+}
+
+function makeSocialHorizontal () {
+  const socialIcons = document.getElementById('social-links-desktop')
+  const socialContainer = socialIcons.getElementsByClassName(
+    'social-vertical')[0]
+  if (socialContainer !== undefined) {
+    socialContainer.classList.add('container')
+    socialContainer.classList.remove('social-vertical')
+    socialContainer.classList.add('social-horizontal')
+  }
+}
+
+function showFooterSocial () {
+  const socialIcons = document.getElementById('social-links-desktop')
+  const footerSocial = document.getElementById('footer-social-links-wrap')
+  socialIcons.classList.add('is-hidden')
+  footerSocial.classList.remove('is-hidden-desktop')
+  footerSocial.classList.add('is-shown')
 }

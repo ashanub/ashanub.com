@@ -43,6 +43,13 @@ body, button, input, optgroup, select, textarea {
 .site-element-shadow-very-small{
   box-shadow: 5px 5px $site-purple;
   background-color: $site-font-white;
+
+  transition: box-shadow .3s ease-in-out, background-color .3s ease-in-out;
+
+  &:hover, &:focus {
+    box-shadow: 1px 1px $site-purple;
+    background-color: $site-font-white;
+  }
 }
 
 .site-element-shadow-small {
@@ -62,4 +69,15 @@ body, button, input, optgroup, select, textarea {
   &:hover, &:focus {
     box-shadow: 5px 5px $site-purple;
   }
+}
+
+.social-vertical{
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.social-horizontal{
+  display: flex;
+  width: 100%;
 }
