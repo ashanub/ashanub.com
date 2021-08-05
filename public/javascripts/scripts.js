@@ -50,36 +50,40 @@ document.addEventListener('DOMContentLoaded', event => {
   })
   resizeWorkCard()
 
-  const workTabs = document.querySelectorAll('#work > div > div > div.column.is-one-third.tabs-column > div > ul > li')
+  const workTabs = document.querySelectorAll(
+    '#work > div > div > div.column.is-one-third.tabs-column > div > ul > li')
   workTabs.forEach((element) => {
     element.addEventListener('click', resizeWorkCard)
   })
 
   //Handling contact form
   const contactForm = document.getElementById('contact-form')
-  contactForm.addEventListener('submit', (event) =>{
+  contactForm.addEventListener('submit', (event) => {
     event.preventDefault()
 
     //form data
     const name = document.getElementById('name').value
     const email = document.getElementById('email').value
     const message = document.getElementById('message').value
+    const notification = document.getElementById('form-notification')
 
     const data = {
       name: name,
       email: email,
-      message: message
+      message: message,
     }
 
     fetch('/submit', {
       method: 'post',
       headers: {
         'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data)
-    }).then(res => res.json())
-    .then(res => console.log(res));
+      body: JSON.stringify(data),
+    }).then(res => res.json()).then(res => {
+      notification.classList.toggle('is-hidden')
+      console.log(res)
+    })
 
   })
 })

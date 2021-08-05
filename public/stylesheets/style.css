@@ -135,6 +135,9 @@ html {
     background-color: #ccb9e4; }
   html #contact .container .columns .form-column form .control .icon {
     color: #1c1427; }
+  html #contact .container .columns .form-column form .notification {
+    background-color: #408667;
+    color: #ccb9e4; }
   html #contact .container .columns .form-column form button {
     font-size: 1.5em;
     font-weight: 600;
