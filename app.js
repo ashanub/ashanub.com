@@ -6,6 +6,7 @@ const logger = require('morgan')
 const hbs = require('express-handlebars')
 const hbsHelpers = require('handlebars-helpers')
 const multiHelpers = hbsHelpers()
+const sendMail = require('./mail')
 
 const indexRouter = require('./routes/index')
 const usersRouter = require('./routes/users')
@@ -20,7 +21,7 @@ app.engine(
   hbs({
     helpers: {
       multiHelpers,
-      makeArray: function(str) {
+      makeArray: function (str) {
         return str.split(';')
       }, //Splits a string in to an array by the semicolons
     },
@@ -42,6 +43,24 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
 app.use('/work', workRouter)
+
+//Parsing form data
+app.use(express.urlencoded({
+  extended: false,
+}))
+app.use(express.json())
+
+app.post('/submit', (req, res) => {
+  const { email, name, message } = req.body
+
+  sendMail(email, name, message, (err, data) => {
+    if (err) {
+      res.statusCode(500).json({ message: 'Internal error' })
+    } else {
+      res.json({ message: 'Mail sent successfully' })
+    }
+  })
+})
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

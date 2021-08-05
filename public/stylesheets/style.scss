@@ -4,6 +4,20 @@
 html {
   scroll-behavior: smooth;
 
+  body::-webkit-scrollbar {
+    width: 0.5em;
+  }
+
+  body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: $site-black;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: $site-purple;
+    border-radius: 4px;
+  }
+
   .hero {
     .hero-head {
       .navbar {
@@ -237,12 +251,12 @@ html {
 
         .form-column {
           form {
-            .control{
+            .control {
               input, textarea {
                 background-color: $site-font-white;
               }
 
-              .icon{
+              .icon {
                 color: $site-black;
               }
             }
@@ -315,15 +329,49 @@ html {
     }
   }
 
-  .footer{
+  .footer {
     background-color: $site-black;
 
-    .link{
+    .link {
       color: $site-cta;
     }
 
-    .heart{
+    .heart {
       color: #ec5454;
+    }
+  }
+
+  .social-links {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    bottom: 0;
+
+    .icon {
+      padding: 1.5rem;
+      border-radius: 4px;
+      color: $site-font-white;
+      margin: 0.5rem;
+    }
+
+    .linkedin {
+      background-color: #0077b5;
+    }
+
+    .github {
+      background-color: #333;
+    }
+
+    .twitter {
+      background-color: #1da1f2;
+    }
+
+    .instagram {
+      background-color: #c13584;
+    }
+
+    .codepen {
+      background-color: #006699;
     }
   }
 }

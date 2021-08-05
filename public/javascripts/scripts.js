@@ -54,6 +54,34 @@ document.addEventListener('DOMContentLoaded', event => {
   workTabs.forEach((element) => {
     element.addEventListener('click', resizeWorkCard)
   })
+
+  //Handling contact form
+  const contactForm = document.getElementById('contact-form')
+  contactForm.addEventListener('submit', (event) =>{
+    event.preventDefault()
+
+    //form data
+    const name = document.getElementById('name').value
+    const email = document.getElementById('email').value
+    const message = document.getElementById('message').value
+
+    const data = {
+      name: name,
+      email: email,
+      message: message
+    }
+
+    fetch('/submit', {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    }).then(res => res.json())
+    .then(res => console.log(res));
+
+  })
 })
 
 //Add remove is-mobile class to elements

@@ -9,13 +9,13 @@
                     vel?</p>
             </div>
             <div class="column is-half form-column">
-                <form action="/submit-contact-form" method="post">
+                <form id="contact-form">
                     <div class="columns">
                         <div class="column is-half">
                             <div class="field">
                                 <div class="control has-icons-left">
                                     <input type="text" class="input is-medium site-element-shadow-small"
-                                           placeholder="Your Name">
+                                           placeholder="Your Name" id="name">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-user"></i>
                                     </span>
@@ -26,7 +26,7 @@
                             <div class="field">
                                 <div class="control has-icons-left">
                                     <input type="email" class="input is-medium site-element-shadow-small"
-                                           placeholder="Your Email">
+                                           placeholder="Your Email" id="email">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-envelope"></i>
                                     </span>
@@ -38,7 +38,7 @@
                         <div class="column">
                             <div class="field">
                                 <div class="control">
-                                    <textarea name="" placeholder="Your Message" id="" cols="30" rows="10"
+                                    <textarea name="" placeholder="Your Message" id="message" cols="30" rows="10"
                                               class="textarea site-element-shadow-small is-medium"></textarea>
                                 </div>
                             </div>
