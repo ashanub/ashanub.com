@@ -50,6 +50,21 @@
                                 </div>
                             </div>
                         </li>
+                        <li class="site-border-radius" data-target="portfolio">
+                            <div class="column description-column">
+                                <div class="columns">
+                                    <div class="column is-3">
+                                        <figure class="image is-square">
+                                            <img src="/images/portfolio-thumb.jpg">
+                                        </figure>
+                                    </div>
+                                    <div class="column">
+                                        <h3 class="tab-title">My Portfolio</h3>
+                                        <p class="tab-subtitle">Website</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
                         <li class="site-border-radius" data-target="utb">
                             <div class="column description-column">
                                 <div class="columns">
@@ -108,6 +123,13 @@
                     </div>
 
                     <div class="column">
+                        {{> workDetailsCard visibility="" shadow="very-small" id="portfolio" image="portfolio" alt="Portfolio Screenshot"
+                                body="My personal portfolio website to showcase my past work and skills" techStack="NodeJS / ExpressJS;Handlebars;Bulma;SCSS"
+                                link="https://www.ashanub.com/"}}
+                    </div>
+
+
+                    <div class="column">
                         {{> workDetailsCard visibility="" shadow="very-small" id="learning-pedals" image="learning-pedals" alt="Learning Pedals Screenshot" body="The website of Learning Pedals, Narre Warren, Australia. The
                 website is Wordpress based and the appointment booking form was developed from the
                 ground up to collect submitted data and display them in a Google Sheets document" techStack="Wordpress;HTML;CSS;JS / JQuery;Bootstrap"
@@ -145,6 +167,10 @@
                 website is Wordpress based and the appointment booking form was developed from the
                 ground up to collect submitted data and display them in a Google Sheets document" techStack="Wordpress;HTML;CSS;JS / JQuery;Bootstrap"
                         link="https://www.learningpedals.com.au/"}}
+
+                {{> workDetailsCard visibility="is-hidden" shadow="large" id="portfolio" image="portfolio" alt="Portfolio Screenshot" body="My personal portfolio website to showcase my past work and skills" techStack="ExpressJS/ NodeJS;Handlebars;Bulma;SCSS"
+                        link="http://www.ashanub.com/"}}
+
 
                 {{> workDetailsCard visibility="is-hidden" shadow="large" id="utb" image="utb" alt="UTB screenshot" body="A travel & tourism website made for UTB travel Sri Lanka. Site
                 was made using the Vue static site generator Gridsome with Wordpress as a headless CMS" techStack="Gridsome;GraphQL;Vue;Wordpress;Bulma;SCSS"
